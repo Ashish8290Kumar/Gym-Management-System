@@ -12,9 +12,9 @@ if (typeof document !== 'undefined') {
 }
 
 // STATIC ASSET PATH IMPORTS
-import gymBg1 from '../assets/Gym-bg.jpg';
-import gymBg2 from '../assets/Gym-bg2.jpg';
-import gymBg3 from '../assets/Gym-bg3.jpg';
+import gymBg1 from '../assets/gym-bg.jpg';
+import gymBg2 from '../assets/gym-bg2.jpg';
+import gymBg3 from '../assets/gym-bg3.jpg';
 import gymBg4 from '../assets/gym-bg4.jpg';
 import gymBg5 from '../assets/gym-bg5.jpg';
 import gymBg6 from '../assets/gym-bg6.jpg';
