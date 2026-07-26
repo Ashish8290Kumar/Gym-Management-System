@@ -44,7 +44,7 @@ const HomePublic = () => {
     React.useEffect(() => {
         const slideTimer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
-        }, 5000); 
+        }, 5000);
 
         return () => clearInterval(slideTimer);
     }, [sliderImages.length]);
@@ -52,7 +52,7 @@ const HomePublic = () => {
 
     // PART -2
 
-        const scrollToSection = (id, tabName) => {
+    const scrollToSection = (id, tabName) => {
         setActiveTab(tabName);
         const element = document.getElementById(id);
         if (element) {
@@ -102,7 +102,7 @@ const HomePublic = () => {
                 </div>
 
 
-{/* PART-3 */}
+                {/* PART-3 */}
 
                 {/* Primary Menu Navigation Bar */}
                 <div className="bg-black/80 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-white/5">
@@ -130,9 +130,9 @@ const HomePublic = () => {
                                         link.action();
                                     }}
                                     className="cursor-pointer uppercase select-none transition-colors duration-150 tracking-wider"
-                                    style={{ 
-                                        fontFamily: "'Roboto', sans-serif", 
-                                        fontWeight: 500, 
+                                    style={{
+                                        fontFamily: "'Roboto', sans-serif",
+                                        fontWeight: 500,
                                         fontSize: '13px',
                                         color: isSelected ? '#FF451D' : '#E2E8F0',
                                         backgroundColor: 'transparent',
@@ -140,8 +140,8 @@ const HomePublic = () => {
                                         outline: 'none',
                                         padding: '0px 2px'
                                     }}
-                                    onMouseEnter={(e) => { if(!isSelected) e.target.style.color = '#FF451D'; }}
-                                    onMouseLeave={(e) => { if(!isSelected) e.target.style.color = '#E2E8F0'; }}
+                                    onMouseEnter={(e) => { if (!isSelected) e.target.style.color = '#FF451D'; }}
+                                    onMouseLeave={(e) => { if (!isSelected) e.target.style.color = '#E2E8F0'; }}
                                 >
                                     {link.label}
                                 </button>
@@ -151,19 +151,19 @@ const HomePublic = () => {
 
                     {/* FIXED SIDE-BY-SIDE REGISTER ACTION CONTAINER */}
                     <div className="flex items-center space-x-3">
-                        <button 
-                            onClick={() => navigate('/login')} 
+                        <button
+                            onClick={() => navigate('/login')}
                             className="bg-transparent hover:bg-white/5 border border-white/20 text-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-200 rounded-sm"
                             style={{ fontFamily: "'Roboto', sans-serif", fontWeight: 500, fontSize: '13px' }}
                         >
                             Login
                         </button>
-                        <button 
+                        <button
                             onClick={() => {
                                 setActiveTab('contact');
                                 const el = document.getElementById('contact');
-                                if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                            }} 
+                                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }}
                             className="bg-[#FF451D] hover:bg-[#e33914] text-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-200 rounded-sm shadow-md"
                             style={{ fontFamily: "'Roboto', sans-serif", fontWeight: 700, fontSize: '13px' }}
                         >
@@ -174,7 +174,7 @@ const HomePublic = () => {
             </header>
 
 
-{/* PART-4 */}
+            {/* PART-4 */}
 
             {/* HERO SLIDER SECTION FRAME */}
             <section className="relative h-screen bg-black flex items-center px-6 overflow-hidden z-10">
@@ -225,7 +225,7 @@ const HomePublic = () => {
             </section>
 
 
-{/* PART-5 */}
+            {/* PART-5 */}
 
             {/* ABOUT US PREMIUM SECTION ROW */}
             <section id="about" className="py-24 px-6 bg-[#0E1118]/60 scroll-mt-24 relative z-20 border-b border-white/5">
@@ -321,147 +321,147 @@ const HomePublic = () => {
             </section>
 
 
-{/* PART-6 */}
+            {/* PART-6 */}
 
-        {/* INSTRUCTORS SHOWROOM SECTION */}
-        <section id="trainers" className="py-24 bg-[#12141C]/40 border-t border-white/5 px-6 scroll-mt-24 relative z-20">
-            <div className="max-w-5xl mx-auto space-y-12">
-                <div className="text-left space-y-1">
-                    <h4 className="text-sm font-bold text-[#FF451D] uppercase tracking-wider border-l-2 border-[#FF451D] pl-3">Expert Guidance</h4>
-                    <h3 className="text-3xl font-black uppercase text-white tracking-wide">Certified Instructors</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[
-                        { name: "Vikram Rathore", role: "Head Trainer", spec: "Olympic Power Blocks", img: gymBg9 },
-                        { name: "Ananya Sharma", role: "Calisthenics Coach", spec: "Kinematic Bodyweight Movements", img: gymBg11 },
-                        { name: "Rajesh Kumar", role: "Endurance Expert", spec: "Cardio Threshold Operations", img: gymBg8 }
-                    ].map((trainer, idx) => (
-                        <div key={idx} className="bg-[#12141C] border border-white/5 rounded-sm overflow-hidden shadow-lg flex flex-col justify-between group hover:border-[#FF451D]/20 transition-all duration-300">
-                            <div className="h-52 bg-slate-950 overflow-hidden relative border-b border-white/5">
-                                <img
-                                    src={trainer.img}
-                                    alt={trainer.name}
-                                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 brightness-95"
-                                />
-                            </div>
-                            <div className="p-5 space-y-2 text-left">
-                                <div>
-                                    <h5 className="text-sm font-bold text-slate-200 uppercase tracking-wide">{trainer.name}</h5>
-                                    <span className="text-[10px] text-[#FF451D] font-bold uppercase tracking-wider block mt-0.5">{trainer.role}</span>
+            {/* INSTRUCTORS SHOWROOM SECTION */}
+            <section id="trainers" className="py-24 bg-[#12141C]/40 border-t border-white/5 px-6 scroll-mt-24 relative z-20">
+                <div className="max-w-5xl mx-auto space-y-12">
+                    <div className="text-left space-y-1">
+                        <h4 className="text-sm font-bold text-[#FF451D] uppercase tracking-wider border-l-2 border-[#FF451D] pl-3">Expert Guidance</h4>
+                        <h3 className="text-3xl font-black uppercase text-white tracking-wide">Certified Instructors</h3>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {[
+                            { name: "Vikram Rathore", role: "Head Trainer", spec: "Olympic Power Blocks", img: gymBg9 },
+                            { name: "Ananya Sharma", role: "Calisthenics Coach", spec: "Kinematic Bodyweight Movements", img: gymBg11 },
+                            { name: "Rajesh Kumar", role: "Endurance Expert", spec: "Cardio Threshold Operations", img: gymBg8 }
+                        ].map((trainer, idx) => (
+                            <div key={idx} className="bg-[#12141C] border border-white/5 rounded-sm overflow-hidden shadow-lg flex flex-col justify-between group hover:border-[#FF451D]/20 transition-all duration-300">
+                                <div className="h-52 bg-slate-950 overflow-hidden relative border-b border-white/5">
+                                    <img
+                                        src={trainer.img}
+                                        alt={trainer.name}
+                                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 brightness-95"
+                                    />
                                 </div>
-                                <p className="text-slate-400 text-xs font-medium border-t border-white/5 pt-2">Specialty: <strong className="text-slate-300 font-bold">{trainer.spec}</strong></p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-
-        {/* MEMBERSHIP PRICING SECTION - EXACT TEXT MATCH */}
-        <section id="packages" className="py-24 bg-[#111319] border-t border-white/5 px-6 scroll-mt-24 relative z-20">
-            <div className="max-w-6xl mx-auto space-y-12">
-
-                {/* Centered Structural Section Header */}
-                <div className="text-center space-y-2">
-                    <span className="text-[10px] font-bold tracking-widest text-[#FF451D] uppercase">
-                        Pricing Model
-                    </span>
-                    <h3 className="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">
-                        Find Your <span className="text-[#FF451D]">Perfect Plan</span>
-                    </h3>
-                </div>
-
-                {/* Grid Layout Container */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto pt-4">
-                    {[
-                        {
-                            name: "SILVER TIER",
-                            sub: "1 MONTH ACCESS",
-                            fee: "1499",
-                            highlighted: false,
-                            perks: ["Full Gym Floor Entry", "Standard Locker Room Lockers", "1x General Fitness Evaluation"]
-                        },
-                        {
-                            name: "GOLD TIER",
-                            sub: "3 MONTHS ACCESS",
-                            fee: "3499",
-                            highlighted: true,
-                            perks: ["All Silver Tier Entry Perks", "Sauna & Steam Bath Utilities", "Group Yoga & Zumba Classes Access", "2x Personal Training Consults"]
-                        },
-                        {
-                            name: "PLATINUM ALPHA",
-                            sub: "12 MONTHS ACCESS",
-                            fee: "9999",
-                            highlighted: false,
-                            perks: ["Unrestricted 24/7 Access Profiles", "Private VIP Locker Access", "Unlimited Group Fitness Masterclasses", "Dedicated Personal Trainer Allocation", "Custom Specialized Diet Layout Formulations"]
-                        }
-                    ].map((pkg, i) => (
-                        <div
-                            key={i}
-                            className={`relative p-8 flex flex-col justify-between shadow-2xl transition-transform duration-300 hover:-translate-y-1 ${pkg.highlighted
-                                ? 'bg-[#FF451D] text-white rounded-br-[64px] rounded-tl-3xl rounded-tr-sm rounded-bl-sm'
-                                : 'bg-[#161922] border border-white/5 text-slate-100 rounded-br-[64px] rounded-tl-3xl rounded-tr-sm rounded-bl-sm'
-                                }`}
-                        >
-                            <div className="space-y-4 text-left">
-                                {/* Main Dynamic Text Headers Match */}
-                                <div>
-                                    <h5 className={`text-sm font-black uppercase tracking-wider ${pkg.highlighted ? 'text-white' : 'text-slate-200'}`}>
-                                        {pkg.name}
-                                    </h5>
-                                    <span className={`text-[9px] font-bold tracking-wider uppercase block mt-0.5 ${pkg.highlighted ? 'text-white/70' : 'text-slate-500'}`}>
-                                        {pkg.sub}
-                                    </span>
+                                <div className="p-5 space-y-2 text-left">
+                                    <div>
+                                        <h5 className="text-sm font-bold text-slate-200 uppercase tracking-wide">{trainer.name}</h5>
+                                        <span className="text-[10px] text-[#FF451D] font-bold uppercase tracking-wider block mt-0.5">{trainer.role}</span>
+                                    </div>
+                                    <p className="text-slate-400 text-xs font-medium border-t border-white/5 pt-2">Specialty: <strong className="text-slate-300 font-bold">{trainer.spec}</strong></p>
                                 </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
-                                {/* Indian Rupees Plan Rate Layout Row */}
-                                <div className="flex items-baseline space-x-1 pt-2">
-                                    <span className="text-3xl font-black tracking-tight">₹{pkg.fee}</span>
-                                    <span className={`text-[10px] uppercase font-bold tracking-wider ${pkg.highlighted ? 'text-white/70' : 'text-slate-500'}`}>
-                                        / PLAN RATE
+            {/* MEMBERSHIP PRICING SECTION - EXACT TEXT MATCH */}
+            <section id="packages" className="py-24 bg-[#111319] border-t border-white/5 px-6 scroll-mt-24 relative z-20">
+                <div className="max-w-6xl mx-auto space-y-12">
+
+                    {/* Centered Structural Section Header */}
+                    <div className="text-center space-y-2">
+                        <span className="text-[10px] font-bold tracking-widest text-[#FF451D] uppercase">
+                            Pricing Model
+                        </span>
+                        <h3 className="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">
+                            Find Your <span className="text-[#FF451D]">Perfect Plan</span>
+                        </h3>
+                    </div>
+
+                    {/* Grid Layout Container */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto pt-4">
+                        {[
+                            {
+                                name: "SILVER TIER",
+                                sub: "1 MONTH ACCESS",
+                                fee: "1499",
+                                highlighted: false,
+                                perks: ["Full Gym Floor Entry", "Standard Locker Room Lockers", "1x General Fitness Evaluation"]
+                            },
+                            {
+                                name: "GOLD TIER",
+                                sub: "3 MONTHS ACCESS",
+                                fee: "3499",
+                                highlighted: true,
+                                perks: ["All Silver Tier Entry Perks", "Sauna & Steam Bath Utilities", "Group Yoga & Zumba Classes Access", "2x Personal Training Consults"]
+                            },
+                            {
+                                name: "PLATINUM ALPHA",
+                                sub: "12 MONTHS ACCESS",
+                                fee: "9999",
+                                highlighted: false,
+                                perks: ["Unrestricted 24/7 Access Profiles", "Private VIP Locker Access", "Unlimited Group Fitness Masterclasses", "Dedicated Personal Trainer Allocation", "Custom Specialized Diet Layout Formulations"]
+                            }
+                        ].map((pkg, i) => (
+                            <div
+                                key={i}
+                                className={`relative p-8 flex flex-col justify-between shadow-2xl transition-transform duration-300 hover:-translate-y-1 ${pkg.highlighted
+                                    ? 'bg-[#FF451D] text-white rounded-br-[64px] rounded-tl-3xl rounded-tr-sm rounded-bl-sm'
+                                    : 'bg-[#161922] border border-white/5 text-slate-100 rounded-br-[64px] rounded-tl-3xl rounded-tr-sm rounded-bl-sm'
+                                    }`}
+                            >
+                                <div className="space-y-4 text-left">
+                                    {/* Main Dynamic Text Headers Match */}
+                                    <div>
+                                        <h5 className={`text-sm font-black uppercase tracking-wider ${pkg.highlighted ? 'text-white' : 'text-slate-200'}`}>
+                                            {pkg.name}
+                                        </h5>
+                                        <span className={`text-[9px] font-bold tracking-wider uppercase block mt-0.5 ${pkg.highlighted ? 'text-white/70' : 'text-slate-500'}`}>
+                                            {pkg.sub}
                                         </span>
+                                    </div>
+
+                                    {/* Indian Rupees Plan Rate Layout Row */}
+                                    <div className="flex items-baseline space-x-1 pt-2">
+                                        <span className="text-3xl font-black tracking-tight">₹{pkg.fee}</span>
+                                        <span className={`text-[10px] uppercase font-bold tracking-wider ${pkg.highlighted ? 'text-white/70' : 'text-slate-500'}`}>
+                                            / PLAN RATE
+                                        </span>
+                                    </div>
+
+                                    {/* Features Checkmark Content Lists Match */}
+                                    <ul className="space-y-2.5 pt-4 border-t border-white/10">
+                                        {pkg.perks.map((perk, pi) => (
+                                            <li key={pi} className="text-xs font-semibold tracking-wide flex items-start space-x-2.5">
+                                                <Check
+                                                    size={13}
+                                                    className={`mt-0.5 shrink-0 ${pkg.highlighted ? 'text-white' : 'text-[#FF451D]'}`}
+                                                />
+                                                <span className={pkg.highlighted ? 'text-white/90' : 'text-slate-300'}>
+                                                    {perk}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
 
-                                {/* Features Checkmark Content Lists Match */}
-                                <ul className="space-y-2.5 pt-4 border-t border-white/10">
-                                    {pkg.perks.map((perk, pi) => (
-                                        <li key={pi} className="text-xs font-semibold tracking-wide flex items-start space-x-2.5">
-                                            <Check
-                                                size={13}
-                                                className={`mt-0.5 shrink-0 ${pkg.highlighted ? 'text-white' : 'text-[#FF451D]'}`}
-                                            />
-                                            <span className={pkg.highlighted ? 'text-white/90' : 'text-slate-300'}>
-                                                {perk}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                {/* Procure Button Design Elements Match */}
+                                <div className="pt-8">
+                                    <button
+                                        onClick={() => {
+                                            const element = document.getElementById('contact');
+                                            if (element) element.scrollIntoView({ behavior: 'smooth' });
+                                        }}
+                                        className={`w-full py-3 text-xs font-black uppercase tracking-widest transition-all rounded-sm shadow-md ${pkg.highlighted
+                                            ? 'bg-white text-black hover:bg-slate-100'
+                                            : 'bg-[#FF451D] text-white hover:bg-[#e33914]'
+                                            }`}
+                                    >
+                                        PROCURE PLAN STRATEGY
+                                    </button>
+                                </div>
                             </div>
-
-                            {/* Procure Button Design Elements Match */}
-                            <div className="pt-8">
-                                <button
-                                    onClick={() => {
-                                        const element = document.getElementById('contact');
-                                        if (element) element.scrollIntoView({ behavior: 'smooth' });
-                                    }}
-                                    className={`w-full py-3 text-xs font-black uppercase tracking-widest transition-all rounded-sm shadow-md ${pkg.highlighted
-                                        ? 'bg-white text-black hover:bg-slate-100'
-                                        : 'bg-[#FF451D] text-white hover:bg-[#e33914]'
-                                        }`}
-                                >
-                                    PROCURE PLAN STRATEGY
-                                </button>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-{/* PART-7 */}
+            {/* PART-7 */}
 
-                    {/* BACKEND-READY REGISTRATION PORTAL WITH ROLE SELECTION */}
+            {/* BACKEND-READY REGISTRATION PORTAL WITH ROLE SELECTION */}
             <section id="contact" className="py-24 px-6 max-w-xl mx-auto space-y-6 scroll-mt-24 relative z-20">
                 <div className="text-center space-y-1">
                     <h4 className="text-sm font-bold text-[#FF451D] uppercase tracking-wider">Registration Hub</h4>
@@ -501,8 +501,18 @@ const HomePublic = () => {
                             </div>
                             <div className="text-left">
                                 <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Age</label>
-                                <input type="number" required min="1" value={regForm.age} onChange={(e) => setRegForm({ ...regForm, age: e.target.value })} placeholder="24" className="w-full bg-[#0A0C10] border border-white/5 text-slate-200 text-xs rounded-xl px-4 py-3 focus:outline-none focus:border-[#FF451D] font-medium" />
+                                <input
+                                    type="number"
+                                    required
+                                    min="1"
+                                    value={regForm.age}
+                                    /* Badlaav: parseInt lagaya hai jo text ko number bana dega */
+                                    onChange={(e) => setRegForm({ ...regForm, age: parseInt(e.target.value) || "" })}
+                                    placeholder="24"
+                                    className="w-full bg-[#0A0C10] border border-white/5 text-slate-200 text-xs rounded-xl px-4 py-3 focus:outline-none focus:border-[#FF451D] font-medium"
+                                />
                             </div>
+
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
