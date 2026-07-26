@@ -520,9 +520,9 @@ const HomePublic = () => {
                                 <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Gender Selection</label>
                                 <select value={regForm.gender} required onChange={(e) => setRegForm({ ...regForm, gender: e.target.value })} className="w-full bg-[#0A0C10] border border-white/5 text-slate-200 text-xs rounded-xl px-4 py-3 focus:outline-none focus:border-[#FF451D] font-medium">
                                     <option value="">Select Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
+                                    <option value="MALE">Male</option>
+                                    <option value="FEMALE">Female</option>
+                                    <option value="OTHER">Other</option>
                                 </select>
                             </div>
 
