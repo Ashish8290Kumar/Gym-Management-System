@@ -66,7 +66,7 @@ const HomePublic = () => {
         setIsLoading(true);
 
         try {
-            await API.post('/auth/register', {
+            await API.post('auth/register', {
                 username: regForm.username.trim(),
                 email: regForm.email.trim(),
                 password: regForm.password,
