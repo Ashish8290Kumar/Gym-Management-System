@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://gym-management-system-backend-2zp3.onrender.com', 
+  baseURL: 'https://gym-management-system-backend-2zp3.onrender.com/api', 
   headers: {
     'Content-Type': 'application/json'
   }

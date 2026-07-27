@@ -61,42 +61,44 @@ const HomePublic = () => {
     };
 
     const handleRegisterSubmit = async (e) => {
-    e.preventDefault();
-    setStatus({ text: '', type: '' });
+        e.preventDefault();
+        setStatus({ text: '', type: '' });
 
-    // Client-side quick check to prevent backend Enum crashes
-    if (!regForm.gender) {
-        setStatus({ text: "Please select a valid gender option.", type: "error" });
-        return;
-    }
+        // Client-side quick check to prevent backend Enum crashes
+        if (!regForm.gender) {
+            setStatus({ text: "Please select a valid gender option.", type: "error" });
+            return;
+        }
 
-    setIsLoading(true);
+        setIsLoading(true);
 
-    try {
-        // FIXED: Added the missing '/api/' prefix to match your @RequestMapping("/api/auth")
-        await API.post('/api/auth/register', {
-            username: regForm.username.trim(),
-            email: regForm.email.trim(),
-            password: regForm.password,
-            phoneNumber: regForm.phoneNumber ? regForm.phoneNumber.trim() : "",
-            age: parseInt(regForm.age, 10) || 0, // Fallback to 0 instead of NaN if empty
-            gender: regForm.gender,
-            role: regForm.role
-        });
-        
-        setStatus({ text: "Registration completed successfully! Proceed to Login.", type: "success" });
-        setRegForm({ username: '', email: '', password: '', phoneNumber: '', age: '', gender: '', role: 'MEMBER' });
-    } catch (err) {
-        // Captures precise validation field errors sent down by Spring Boot validation
-        const serverErrorMessage = err.response?.data?.message || err.response?.data;
-        setStatus({ 
-            text: typeof serverErrorMessage === 'string' ? serverErrorMessage : "Error validating account creation parameters.", 
-            type: "error" 
-        });
-    } finally {
-        setIsLoading(false);
-    }
-};
+        try {
+            // FIXED: Added the missing '/api/' prefix to match your @RequestMapping("/api/auth")
+            // Change 'auth/register' to include the full matching controller request mapping path
+            await API.post('/auth/register', {
+                username: regForm.username.trim(),
+                email: regForm.email.trim(),
+                password: regForm.password,
+                phoneNumber: regForm.phoneNumber.trim(),
+                age: parseInt(regForm.age, 10) || 0,
+                gender: regForm.gender,
+                role: regForm.role
+            });
+
+
+            setStatus({ text: "Registration completed successfully! Proceed to Login.", type: "success" });
+            setRegForm({ username: '', email: '', password: '', phoneNumber: '', age: '', gender: '', role: 'MEMBER' });
+        } catch (err) {
+            // Captures precise validation field errors sent down by Spring Boot validation
+            const serverErrorMessage = err.response?.data?.message || err.response?.data;
+            setStatus({
+                text: typeof serverErrorMessage === 'string' ? serverErrorMessage : "Error validating account creation parameters.",
+                type: "error"
+            });
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
 
     return (
